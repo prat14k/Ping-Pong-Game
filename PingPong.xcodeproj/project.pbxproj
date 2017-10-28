@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AB261B531FA4C954002D18C0 /* LLPIXEL3.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ABB653C81FA47E7400A0A969 /* LLPIXEL3.ttf */; };
+		AB261B551FA4CFF6002D18C0 /* StartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB261B541FA4CFF6002D18C0 /* StartVC.swift */; };
 		AB7A5B701F9CFD4B0007C59C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7A5B6F1F9CFD4B0007C59C /* AppDelegate.swift */; };
 		AB7A5B721F9CFD4B0007C59C /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = AB7A5B711F9CFD4B0007C59C /* GameScene.sks */; };
 		AB7A5B741F9CFD4B0007C59C /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = AB7A5B731F9CFD4B0007C59C /* Actions.sks */; };
@@ -18,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AB261B541FA4CFF6002D18C0 /* StartVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartVC.swift; sourceTree = "<group>"; };
 		AB7A5B6C1F9CFD4B0007C59C /* PingPong.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PingPong.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB7A5B6F1F9CFD4B0007C59C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AB7A5B711F9CFD4B0007C59C /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -28,6 +31,7 @@
 		AB7A5B7C1F9CFD4B0007C59C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AB7A5B7F1F9CFD4B0007C59C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AB7A5B811F9CFD4B0007C59C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ABB653C81FA47E7400A0A969 /* LLPIXEL3.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = LLPIXEL3.ttf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,11 +64,13 @@
 		AB7A5B6E1F9CFD4B0007C59C /* PingPong */ = {
 			isa = PBXGroup;
 			children = (
+				ABB653C81FA47E7400A0A969 /* LLPIXEL3.ttf */,
 				AB7A5B6F1F9CFD4B0007C59C /* AppDelegate.swift */,
 				AB7A5B711F9CFD4B0007C59C /* GameScene.sks */,
 				AB7A5B731F9CFD4B0007C59C /* Actions.sks */,
 				AB7A5B751F9CFD4B0007C59C /* GameScene.swift */,
 				AB7A5B771F9CFD4B0007C59C /* GameViewController.swift */,
+				AB261B541FA4CFF6002D18C0 /* StartVC.swift */,
 				AB7A5B791F9CFD4B0007C59C /* Main.storyboard */,
 				AB7A5B7C1F9CFD4B0007C59C /* Assets.xcassets */,
 				AB7A5B7E1F9CFD4B0007C59C /* LaunchScreen.storyboard */,
@@ -132,6 +138,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB261B531FA4C954002D18C0 /* LLPIXEL3.ttf in Resources */,
 				AB7A5B7B1F9CFD4B0007C59C /* Main.storyboard in Resources */,
 				AB7A5B721F9CFD4B0007C59C /* GameScene.sks in Resources */,
 				AB7A5B7D1F9CFD4B0007C59C /* Assets.xcassets in Resources */,
@@ -150,6 +157,7 @@
 				AB7A5B761F9CFD4B0007C59C /* GameScene.swift in Sources */,
 				AB7A5B781F9CFD4B0007C59C /* GameViewController.swift in Sources */,
 				AB7A5B701F9CFD4B0007C59C /* AppDelegate.swift in Sources */,
+				AB261B551FA4CFF6002D18C0 /* StartVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,7 +295,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FH6F3G6EQZ;
 				INFOPLIST_FILE = PingPong/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = bid.PingPong;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -301,7 +311,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FH6F3G6EQZ;
 				INFOPLIST_FILE = PingPong/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = bid.PingPong;
 				PRODUCT_NAME = "$(TARGET_NAME)";

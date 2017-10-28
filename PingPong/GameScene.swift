@@ -14,6 +14,8 @@ class GameScene: SKScene {
     var ball = SKSpriteNode()
     var player1 = SKSpriteNode()
     var player2 = SKSpriteNode()
+    var scorePl1 = SKLabelNode()
+    var scorePl2 = SKLabelNode()
     
     override func didMove(to view: SKView) {
         
@@ -23,8 +25,14 @@ class GameScene: SKScene {
         player1 = self.childNode(withName: "player1") as! SKSpriteNode
         player2 = self.childNode(withName: "player2") as! SKSpriteNode
         
+        scorePl1 = self.childNode(withName: "player1Score") as! SKLabelNode
+        scorePl2 = self.childNode(withName: "player2Score") as! SKLabelNode
         
-        ball.physicsBody?.applyImpulse(CGVector(dx: 30, dy: 30))
+        
+        player1.position.y = (-self.frame.height/2.0) + 50
+        player2.position.y = (self.frame.height/2.0) - 50
+        
+        ball.physicsBody?.applyImpulse(CGVector(dx: 20, dy: 20))
         
         let border = SKPhysicsBody(edgeLoopFrom: self.frame)
         border.friction = 0
@@ -38,7 +46,18 @@ class GameScene: SKScene {
         
         for touch in touches {
             let loc = touch.location(in: self)
-            player1.run(SKAction.moveTo(x: loc.x, duration: 0.2))
+            
+            if currentGameType == .player2 {
+                if loc.y > 0 {
+                    player2.run(SKAction.moveTo(x: loc.x, duration: 0.2))
+                }
+                if loc.y < 0 {
+                    player1.run(SKAction.moveTo(x: loc.x, duration: 0.2))
+                }
+            }
+            else{
+                player1.run(SKAction.moveTo(x: loc.x, duration: 0.2))
+            }
         }
         
     }
@@ -51,11 +70,13 @@ class GameScene: SKScene {
         ball.physicsBody?.velocity = CGVector(dx: 0, dy: 0)
         if(winType){
             score[0] = score[0]+1
-            ball.physicsBody?.applyImpulse(CGVector(dx: 30, dy: 30))
+            scorePl1.text = "\(score[0])"
+            ball.physicsBody?.applyImpulse(CGVector(dx: 20, dy: 20))
         }
         else{
             score[1] = score[1]+1
-            ball.physicsBody?.applyImpulse(CGVector(dx: -30, dy: -30))
+            scorePl2.text = "\(score[1])"
+            ball.physicsBody?.applyImpulse(CGVector(dx: -20, dy: -20))
         }
     }
     
@@ -63,18 +84,45 @@ class GameScene: SKScene {
         
         for touch in touches {
             let loc = touch.location(in: self)
-            player1.run(SKAction.moveTo(x: loc.x, duration: 0.2))
+            
+            if currentGameType == .player2 {
+                if loc.y > 0 {
+                    player2.run(SKAction.moveTo(x: loc.x, duration: 0.2))
+                }
+                if loc.y < 0 {
+                    player1.run(SKAction.moveTo(x: loc.x, duration: 0.2))
+                }
+            }
+            else{
+                player1.run(SKAction.moveTo(x: loc.x, duration: 0.2))
+            }
         }
         
     }
     
     override func update(_ currentTime: TimeInterval) {
         
-        player2.run(SKAction.moveTo(x: self.ball.position.x, duration: 0.8))
-        if ball.position.y <= player1.position.y - 70 {
+        switch currentGameType {
+        case .easy:
+            player2.run(SKAction.moveTo(x: self.ball.position.x, duration: 1.0))
+            break
+        case .medium:
+            player2.run(SKAction.moveTo(x: self.ball.position.x, duration: 0.7))
+            break
+        case .hard:
+            player2.run(SKAction.moveTo(x: self.ball.position.x, duration: 0.5))
+            break
+        case .player2:
+            break
+        default:
+            break
+        }
+        
+        
+        if ball.position.y <= player1.position.y - 30 {
             addScore(false)
         }
-        else if ball.position.y >= player2.position.y + 70 {
+        else if ball.position.y >= player2.position.y + 30 {
             addScore(true)
         }
     }

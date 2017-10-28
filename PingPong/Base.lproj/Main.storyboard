@@ -1,15 +1,97 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A278a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="YFV-ZO-Q96">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--StartVC-->
+        <scene sceneID="IsT-Yl-f9o">
+            <objects>
+                <viewController id="YFV-ZO-Q96" customClass="StartVC" customModule="PingPong" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7bL-K9-3va">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x1J-a8-sTq">
+                                <rect key="frame" x="50" y="288.5" width="275" height="40"/>
+                                <color key="backgroundColor" red="0.1716037326388889" green="0.36669921875" blue="0.86181640625" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="RtN-CZ-0vu"/>
+                                </constraints>
+                                <state key="normal" title="EASY">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="gameTypeSelectAction:" destination="YFV-ZO-Q96" eventType="touchUpInside" id="Skg-gr-oQO"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gRe-h6-EBZ">
+                                <rect key="frame" x="50" y="428.5" width="275" height="40"/>
+                                <color key="backgroundColor" red="0.1716037326" green="0.3666992188" blue="0.8618164062" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="HARD">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="gameTypeSelectAction:" destination="YFV-ZO-Q96" eventType="touchUpInside" id="Oa8-0c-5BY"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AdS-ea-CCH">
+                                <rect key="frame" x="50" y="358.5" width="275" height="40"/>
+                                <color key="backgroundColor" red="0.1716037326" green="0.3666992188" blue="0.8618164062" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="MEDIUM">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="gameTypeSelectAction:" destination="YFV-ZO-Q96" eventType="touchUpInside" id="Ihm-ho-fbQ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uGa-Yb-q6S">
+                                <rect key="frame" x="50" y="198.5" width="275" height="40"/>
+                                <color key="backgroundColor" red="0.1716037326" green="0.3666992188" blue="0.8618164062" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="2 PLAYERS">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="gameTypeSelectAction:" destination="YFV-ZO-Q96" eventType="touchUpInside" id="GaZ-cg-dpe"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="x1J-a8-sTq" firstAttribute="bottom" secondItem="0Dn-Ti-SdJ" secondAttribute="centerY" constant="-15" id="0wt-EG-R1z"/>
+                            <constraint firstItem="x1J-a8-sTq" firstAttribute="width" secondItem="7bL-K9-3va" secondAttribute="width" constant="-100" id="2Fj-be-04h"/>
+                            <constraint firstItem="uGa-Yb-q6S" firstAttribute="centerX" secondItem="x1J-a8-sTq" secondAttribute="centerX" id="3z0-XU-cnx"/>
+                            <constraint firstItem="AdS-ea-CCH" firstAttribute="centerX" secondItem="x1J-a8-sTq" secondAttribute="centerX" id="4nS-gA-4tM"/>
+                            <constraint firstItem="uGa-Yb-q6S" firstAttribute="width" secondItem="x1J-a8-sTq" secondAttribute="width" id="7ok-jZ-nZF"/>
+                            <constraint firstItem="uGa-Yb-q6S" firstAttribute="height" secondItem="x1J-a8-sTq" secondAttribute="height" id="8fR-nS-bJE"/>
+                            <constraint firstItem="gRe-h6-EBZ" firstAttribute="top" secondItem="AdS-ea-CCH" secondAttribute="bottom" constant="30" id="VDR-Gz-IYa"/>
+                            <constraint firstItem="gRe-h6-EBZ" firstAttribute="width" secondItem="AdS-ea-CCH" secondAttribute="width" id="VZq-1P-lma"/>
+                            <constraint firstItem="AdS-ea-CCH" firstAttribute="top" secondItem="0Dn-Ti-SdJ" secondAttribute="centerY" constant="15" id="Wch-dO-waZ"/>
+                            <constraint firstItem="x1J-a8-sTq" firstAttribute="centerX" secondItem="0Dn-Ti-SdJ" secondAttribute="centerX" id="aR0-v9-d2Q"/>
+                            <constraint firstItem="gRe-h6-EBZ" firstAttribute="height" secondItem="AdS-ea-CCH" secondAttribute="height" id="cV2-HH-DFg"/>
+                            <constraint firstItem="AdS-ea-CCH" firstAttribute="width" secondItem="x1J-a8-sTq" secondAttribute="width" id="nkW-1o-cpE"/>
+                            <constraint firstItem="AdS-ea-CCH" firstAttribute="height" secondItem="x1J-a8-sTq" secondAttribute="height" id="vQP-fV-chm"/>
+                            <constraint firstItem="gRe-h6-EBZ" firstAttribute="centerX" secondItem="AdS-ea-CCH" secondAttribute="centerX" id="vcb-ck-uIm"/>
+                            <constraint firstItem="uGa-Yb-q6S" firstAttribute="bottom" secondItem="x1J-a8-sTq" secondAttribute="top" constant="-50" id="ylh-xS-2CE"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="0Dn-Ti-SdJ"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uTZ-HP-iLW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-519" y="131"/>
+        </scene>
         <!--Game View Controller-->
         <scene sceneID="tXr-a1-R10">
             <objects>
-                <viewController id="BV1-FR-VrT" customClass="GameViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GameVC" id="BV1-FR-VrT" customClass="GameViewController" customModule="PingPong" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" multipleTouchEnabled="YES" contentMode="scaleToFill" id="3se-qz-xqx" customClass="SKView">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
